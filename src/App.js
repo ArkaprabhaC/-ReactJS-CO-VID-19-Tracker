@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Cards, Charts, CountryPicker } from './components/index';
+import {fetchData} from './api/index';
+import './App.module.css';
+
+class App extends React.Component {
+    state = {
+        data: {},
+        countries: '',
+    }
+
+    async componentDidMount(){
+        const fetchedData = await fetchData();
+        this.setState({
+            data: fetchedData
+        });
+    }
+
+    handleCountryChange = async (country) =>{
+        const fetchedData = await fetchData(country);
+        this.setState({
+            data: fetchedData,
+            country: country
+        });
+    }
+
+
+    render() {
+
+        const {data,country} = this.state; 
+
+        return (
+            <Fragment> 
+                <h2 class="text-center text-uppercase text-weight-bold my-3">Coronavirus Tracker</h2>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <Cards data={data}/>
+                    </div>
+                    <div className="row justify-content-center">
+                        <CountryPicker handleCountryChange={this.handleCountryChange}/>
+                    </div>
+                    <Charts data={data} country={country}/>  
+                </div>
+                <footer className="mt-5 footer">
+                    <div className="container pt-3">
+                        <p className="text-center font-weight-light mb-0">Remade by <span style={{"border-bottom":"2px solid black"}}>Arkaprabha Chatterjee</span></p>
+                        <p className="text-center font-weight-light mb-0">Drop a mail <a href="mailto:arkaprabha.chatterjee31@gmail.com">
+                            here</a> if you want to collaborate with me.</p>
+                    </div>
+                </footer>
+            </Fragment>
+        )
+    }
 }
 
 export default App;
