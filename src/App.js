@@ -44,7 +44,7 @@ class App extends React.Component {
                 </div>
                 <footer className="mt-5 footer">
                     <div className="container pt-3">
-                        <p className="text-center font-weight-light mb-0">Remade by <span style={{"border-bottom":"2px solid black"}}>Arkaprabha Chatterjee</span></p>
+                        <p className="text-center font-weight-light mb-0">By <span style={{"border-bottom":"2px solid black"}}>Arkaprabha Chatterjee</span></p>
                         <p className="text-center font-weight-light mt-2">Drop a mail <a href="mailto:arkaprabha.chatterjee31@gmail.com">
                             here</a> if you wish to collaborate.</p>
                     </div>
