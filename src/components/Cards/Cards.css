@@ -1,17 +1,19 @@
 .card{
-    border-radius: 5%;
+    border-radius: 2%;
 }
 .confirmed{
-    border-bottom: 10px solid rgba(0,0,255,0.7);
-    border-radius: 5%;
+    border-left: 5px solid rgba(0,0,255,0.7);
+    border-radius: 2%;
+   
 }
 
 .recovered{
-    border-bottom: 10px solid rgba(0,255,0,0.7);
-    border-radius: 5%;
+    border-left: 5px solid rgba(0,255,0,0.7);
+    border-radius: 2%;
+    
 }
 
 .deaths{
-    border-bottom: 10px solid rgba(255,0,0,0.7);
-    border-radius: 5%;
+    border-left: 5px solid rgba(255,0,0,0.7);
+    border-radius: 2%;
 }

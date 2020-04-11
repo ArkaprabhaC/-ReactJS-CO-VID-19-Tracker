@@ -8,8 +8,8 @@ const Cards = ({data: {confirmed,recovered,deaths,lastUpdate}}) => {
     }
     
     return(
-        <div className="row justify-content-center my-5">
-            <div className="col-md-3 col-9 mb-3">
+        <div className="row justify-content-center my-5 mx-0">
+            <div className="col-md-4 col-9 mb-3">
                 <div className="card">
                     <div className="card-body confirmed">
                         <h5 className="card-title text-primary font-weight-light">Confirmed</h5>
@@ -22,12 +22,11 @@ const Cards = ({data: {confirmed,recovered,deaths,lastUpdate}}) => {
                                 separator=","
                             />
                         </p>
-                        <p className="text-secondary m-0">{new Date(lastUpdate).toDateString()}</p> 
-                        <p className="text-secondary m-0">Number of act cases of COVID19</p>                       
+                        <p className="text-secondary m-0">{new Date(lastUpdate).toDateString()}</p>                    
                     </div>
                 </div>
             </div>
-            <div className="col-md-3 col-9 mb-3">
+            <div className="col-md-4 col-9 mb-3">
                 <div className="card">
                     <div className="card-body recovered">
                         <h5 className="card-title text-success font-weight-light">Recovered</h5>
@@ -41,11 +40,10 @@ const Cards = ({data: {confirmed,recovered,deaths,lastUpdate}}) => {
                             />
                         </p>
                         <p className="text-secondary m-0">{new Date(lastUpdate).toDateString()}</p> 
-                        <p className="text-secondary m-0">Number of act cases of COVID19</p>   
                     </div>
                 </div>
             </div>
-            <div className="col-md-3 col-9 mb-0">
+            <div className="col-md-4 col-9 mb-0">
                 <div className="card">
                     <div className="card-body deaths">
                         <h5 className="card-title text-danger font-weight-light">Deaths</h5>
@@ -59,7 +57,6 @@ const Cards = ({data: {confirmed,recovered,deaths,lastUpdate}}) => {
                             />
                         </p>
                         <p className="text-secondary m-0">{new Date(lastUpdate).toDateString()}</p> 
-                        <p className="text-secondary m-0">Number of act cases of COVID19</p>
                     </div>
                 </div>
             </div>
