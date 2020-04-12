@@ -37,7 +37,7 @@ class App extends React.Component {
                     <div className="row justify-content-center">
                         <Cards data={data}/>
                     </div>
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center mb-4">
                         <CountryPicker handleCountryChange={this.handleCountryChange}/>
                     </div>
                     <Charts data={data} country={country}/>  

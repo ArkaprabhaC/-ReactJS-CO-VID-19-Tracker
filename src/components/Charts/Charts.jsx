@@ -17,20 +17,21 @@ const Charts = ({data: {confirmed, deaths, recovered}, country}) => {
         dailyData.length !== 0 ? 
             <Line
                 data={{
-                    labels: dailyData.map(({date}) =>  date),  //indicates data in x direction! //label accepts array
+                    labels: dailyData.slice(dailyData.length-100).map(({date}) =>  date),  //indicates data in x direction! //label accepts array
                     datasets: [{
-                        data: dailyData.map(({confirmed}) => confirmed),
+                        data: dailyData.slice(dailyData.length-100).map(({confirmed}) => confirmed),
                         label: "Infected",
                         borderColor: '#3333ff',
                         fill:true
                     }, {
-                        data: dailyData.map(({deaths}) => deaths),
+                        data: dailyData.slice(dailyData.length-100).map(({deaths}) => deaths),
                         label: "Deaths",
                         borderColor: 'red',
                         backgroundColor: 'rgba(255,0,0,0.7)',
                         fill:true
                     }]
                 }}
+                
             /> : null
     );
 
